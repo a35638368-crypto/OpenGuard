@@ -1,4 +1,5 @@
 import argparse
+import json
 
 from .scanner import Scanner
 
@@ -16,7 +17,11 @@ def main():
 
     if args.command == "scan":
         report = Scanner().run()
-        print(report)
+
+        if args.format == "json":
+            print(json.dumps({"report": report}, indent=2))
+        else:
+            print(report)
 
 
 if __name__ == "__main__":
