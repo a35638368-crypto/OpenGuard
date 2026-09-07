@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from .checks.ssh import check_ssh
 from .checks.ports import check_ports
 from .checks.firewall import check_firewall
@@ -12,5 +14,11 @@ class Scanner:
         ]
 
         return "\n".join(
-            ["OpenGuard Security Report", "=" * 24] + results
+            [
+                "OpenGuard Security Report",
+                "=" * 24,
+                f"Generated: {datetime.now().isoformat(timespec='seconds')}",
+                "",
+                *results,
+            ]
         )
