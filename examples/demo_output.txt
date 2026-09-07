@@ -1,0 +1,8 @@
+OpenGuard Security Report
+========================
+
+Generated: demo
+
+[PASS] SSH configuration
+[WARN] Port exposure detected
+[PASS] Firewall status
